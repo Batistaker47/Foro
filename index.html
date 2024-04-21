@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FORO GAMER</title>
+    <link rel="stylesheet" href="assets/style/style.css">
+    <link rel="stylesheet" href="assets/fontawesome/css/all.min.css">
+    <script src="assets/script/script.js"></script>
+</head>
+<body>
+    <div id="div_modal">
+        <form id="logIn">
+            <div id="div_X" title="Cerrar" onclick="fOcultarModal()">X</div>
+            <h1>Iniciar Sesión</h1>
+            <div class="caja">
+                <input type="text" id="alias">
+                <label for="">Usuario</label>
+            </div>
+            <div class="caja">
+                <input type="password" id="password">
+                <label for="">Contraseña</label>
+            </div>
+            <div class="OlvidarContr">
+                <label id="recordarme"><input type="checkbox">Recordarme</label>
+            <a href="">Forgot password?</a>
+            </div>
+            <div class="OlvidarContr">
+            <div id="registro" onclick="fMostrarModalRegistro()">¿No tienes cuenta? | Registrate</div>
+            </div>
+            <input type="button" value="Entrar" onclick="fControlLogin()" id="botonEntrar">
+            <div id="div_error1">ERROR, Usuario o contraseña incorrecto</div>
+        </form>
+        <form id="Registrarse">
+            <div id="div_X2" title="Cerrar" onclick="fOcultarModal()">X</div>
+            <h1>Formulario de registro</h1>
+            <div class="caja">
+                <input type="text" id="aliasRegistro">
+                <label for="">Nombre de usuario</label>
+            </div>
+            <div class="caja">
+                <input type="password" id="passwordRegistro">
+                <label for="">Contraseña</label>
+            </div>
+            <div class="caja">
+                <input type="password" id="passwordRegistroRepetir">
+                <label for="">Repetir contraseña</label>
+            </div>
+            <div id="avatares"></div>
+            <div class="OlvidarContr">
+            <div id="registro" onclick="fMostrarModalLogin()">¿Ya tienes una cuenta? | Inicia sesión</div>
+            </div>
+            <input type="button" value="Registrarse" onclick="fControlRegistro()" id="botonRegistrar">
+            <div id="div_error2">ERROR. Las Contraseñas no coinciden</div>
+        </form>
+        <form id="tarjeta_usuario">
+            <div id="div_X3" title="Cerrar" onclick="fOcultarModal()">X</div>
+            <div id="datos_usuario"><h1>Mi perfil</h1></div>
+            <div id="foto_user"> <img src="" alt=""></div>
+            <div id="nombre_user"></div>
+            <div id="password_user"></div>
+            <div id="post_creados"></div>
+            <div id="cambiar_password">¿Quieres cambiar tu contraseña?</div>
+            <div id="cerrar_sesion" onclick="fCerrarSesion()"><div>Cerrar Sesion</div></div>
+        </form>
+    </div>
+    <header>
+        <div id="logo"><img src="assets/images/logo.png" alt=""></div>
+        <div id="titulo"><img src="assets/images/TITULO.png" alt=""></div>
+    </header>
+    <nav>
+        <div id="inicio">Inicio</div>
+        <div id="temas" onclick="fMostrarTemas()">Temas</div>
+        <div id="siginLogin" onclick="fMostrarModal()">Sign in/Log in</div>
+        <div id="nav_perfil" onclick="fMostrarDatosUsuario()">Perfil</div>
+    </nav>
+    <section>
+        <div id="descripcion"> 
+            <div>
+                <h1>¡Bienvenidos a Foro Gamer!</h1> 
+                <br> 
+                Este es el lugar donde los amantes de los videojuegos se reúnen para compartir sus experiencias, estrategias y opiniones sobre los últimos títulos. Desde los clásicos retro hasta los lanzamientos más recientes, aquí encontrarás debates apasionantes, análisis profundos y noticias frescas del mundo de los videojuegos.
+                <br>
+                <h1>Recuerda: Eat, Sleep, Game, Repeat! 🎮</h1>
+            </div>
+            <div id="imgDescripcion"> <img src="assets/images/2-eat-sleep-game-repeat-funny-gift-for-gamers-art-frikiland.jpg" alt=""></div>
+        </div>
+        <div id="normas">
+            <h2>NORMAS DEL FORO:</h2>
+            <ol>
+                <li>
+                    <h3>Respeto y convivencia:</h3> Los participantes deben mantener un tono respetuoso en sus interacciones. Se eliminarán mensajes difamatorios, obscenos o insultantes. Además, se debe evitar cualquier tipo de discriminación basada en raza, religión, opinión, nacionalidad, discapacidad u otras circunstancias personales o sociales.
+                </li>
+                <li>
+                    <h3>¡No seas un NPC!</h3> Los usuarios deben usar su identidad real y no suplantar a otros. Además, se debe seguir la netiqueta propia de un espacio en línea, como evitar el uso excesivo de mayúsculas, citar fuentes correctamente y fomentar un debate fluido.
+
+                </li>
+                <li>
+                    <h3>Temas relevantes:</h3> Los mensajes deben ajustarse al tema de debate y no repetirse. También se eliminarán aquellos con fines comerciales o spam1.
+                </li>
+            </ol>
+            <br>
+            Recuerda que estas normas ayudarán a mantener un ambiente positivo y constructivo en el foro de juegos. ¡Diviértete y disfruta de las conversaciones! 
+        </div>
+        <div id="aceptarCondiciones" onclick="fMostrarTemas()">ACEPTO</div>
+    </section>
+    <footer><div>&copy; DPM 2023/2024. Todos los derechos reservados</div></footer>
+</body>
+</html>
