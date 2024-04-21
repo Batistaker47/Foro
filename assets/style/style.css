@@ -1,0 +1,542 @@
+/*--------------------------*/
+/*CSS DE LA WEB EN GENERAL:
+En esta zona del CSS puedes acceder a la información de:
+1) Maquetación y opciones generales del body
+2) Header
+3) Nav
+4) Section
+5) Footer*/
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 120px 60px 1fr 40px;
+    grid-template-areas: 
+    "zheader    zheader"
+    "znav       znav"
+    "zsection   zsection"
+    "zfooter    zfooter";
+}
+header{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    grid-area: zheader;
+    background-color: black;
+    border-radius: 10px;
+}
+nav{
+    grid-area: znav;    
+    background-color:  #7b44e3;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    color: white;
+    font-weight: bold;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    border-radius: 10px;
+}
+nav > div {
+    cursor: pointer;
+}
+nav > div:hover{
+    color: black;
+    transition-duration: 0.5s;
+}
+#nav_perfil, #siginLogin, #temas {
+    display: none;
+}
+#titulo{
+    height: 20px;
+    width: 100%;
+    color: purple;
+    text-align: center;
+}
+#titulo > img {
+    max-height: 100%;
+}
+#logo {
+    height: 90px;
+}
+#logo > img {
+    max-height: 100%;
+    border-radius: 10px;
+    border: 1px solid #7b44e3;
+    border-style: groove;
+}
+section{
+    grid-area: zsection;
+    background-color: black;
+    color: white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+}
+footer{
+    grid-area: zfooter;
+    background-color:  #7b44e3;
+    color: white;
+    margin: 5px;
+    border-radius: 10px;
+    text-align: center;
+}
+h1 {
+    width: 100%;
+    text-decoration: underline;
+    color: white;
+}
+h2 {
+    margin-bottom: 5px;
+    color: #7b44e3;
+}
+h3 {
+    color: #7b44e3;
+}
+/*------------------------------------------------------------------------------------------------------*/
+/*FORMULARIOS
+EN ESTA ZONA ESTÁ LA INFORMACIÓN CSS DE:
+1) DIV LOG IN
+2) DIV REGISTRO
+3) DIV TARJETA DE DATOS DEL USUARIO
+4) DIV DE ACEPTAR LAS NORMAS Y CONDICIONES DEL FORO (ESTE NO ES UN DIV MODAL COMO TAL, PERO ES NECESARIO ACEPTARLO PARA ACCEDER AL 100% DE FUNCIONALIDADES DE LA WEB)*/
+#div_modal{
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color:black;
+    color: black;
+    z-index: 10;
+    opacity: 0.95;
+    display: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+#registro:hover{
+    cursor: pointer;
+    text-decoration: underline;
+}
+#div_X {
+    position: relative;
+    left: 230px;
+    bottom: 20px;
+    color: white;
+    cursor: pointer;
+}
+#div_X2 {
+    position: relative;
+    right: -360px;
+    bottom: 20px;
+    color: white;
+    cursor: pointer;
+}
+#div_X3 {
+    position: relative;
+    right: -320px;
+    bottom: 20px;
+    color: white;
+    cursor: pointer;
+    height: 2px;
+}
+#div_error1, #div_error2 {
+    font-size: 15px;
+    margin-top: 10px;
+    font-weight: bold;
+    color: red;
+    display: none;
+}
+#avatares {
+    width: 335px;
+    height: 300px;
+    display: flex;
+    flex-wrap: wrap;
+}
+#texto_avatares {
+    width: 100%;
+    margin-bottom: 20px;
+}
+.div_avatares {
+    height: 50px;
+    width: 20%;
+}
+.div_avatares > img {
+    max-height: 100%;
+    transition-duration: 0.5s;
+}
+.div_avatares > img:hover {
+    cursor: pointer;
+    scale: 1.5;
+    border: 1px solid purple;
+    border-radius: 50%;
+    transition-duration: 0.5;
+}
+#tarjeta_usuario {
+    display: none;
+    flex-wrap: wrap;
+    width: 400px;
+}
+#tarjeta_usuario > div {
+    width: 100%;
+    margin: 5px;
+    color: white;
+}
+#datos_usuario {
+    text-align: center;
+}
+.infoUser {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    height: 100%;
+    width: 40%;
+    border: 1px solid #7b44e3;
+    margin-left: 20px;
+}
+.infoUser > div {
+    margin: 5px;
+    display: flex;
+    align-items: center;
+}
+.fotoUser {
+    height: 100px;
+}
+.fotoUser > img {
+    max-height: 100%;
+}
+.AliasUser, .HoraUser {
+    width: 100%;
+}
+#foto_user {
+    text-align: center;
+}
+#nombre_user, #password_user, #post_creados {
+    font-size: 19px;
+    margin-top: 10px;
+}
+#cambiar_password {
+    text-align: center;
+    margin-top: 80px;
+    font-size: 18px;
+    font-weight: bold;
+    transition-duration: 1s;
+}
+#cambiar_password:hover {
+    text-decoration: underline;
+    transition-duration: 1s;
+    cursor: pointer;
+}
+#cerrar_sesion {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    margin-top: 80px;
+    font-size: 18px;
+    font-weight: bold;
+    transition-duration: 1s;
+    width: 100px;
+    height: 40px;
+    border-radius: 40px;
+    background-color: rgb(255, 255, 255,1);
+    border: 2px solid purple;
+    outline: none;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.4s ease;
+}
+#cerrar_sesion > div {
+    color: #7b44e3 ;
+}
+#cerrar_sesion:hover {
+    transition-duration: 1s;
+    scale: 1.1;
+    cursor: pointer;
+}
+#descripcion {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 200px;
+    margin-top: 50px;
+}
+#imgDescripcion {
+    height: 250px;
+}
+#imgDescripcion > img {
+    max-height: 100%;
+}
+#descripcion, #normas {
+    margin-left: 10px;
+    font-size: 13px;
+}
+#normas {
+    height: 300px;
+    margin-top: 50px;
+}
+form {
+    height: 450px;
+    background-color:#7b44e3;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+    padding: 32px 48px;
+}
+#Registrarse {
+    height: 800px;
+    display: none;
+}
+#avatares {
+    color: white;
+}
+.caja {
+    position: relative;
+    margin: 30px 0px;
+    max-width: 310px;
+    border-bottom: 2px solid white;
+}
+.caja label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+}
+/* Con este comando, ordenamos al texto que se desplace a la posicion que queramos; en este caso, se desplazará hacia arriba estableciendo un top negativo */
+input:focus ~ label,
+input:valid ~ label {
+    top: -5px;
+}
+
+.caja input {
+    width: 100%;
+    height: 60px;
+    background: transparent;
+    border: none;
+    outline: none;
+    padding: 0 35px 0 5px;
+    color: white;
+}
+
+.OlvidarContr {
+    margin: 10px 0;
+    font-size: 12px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+}
+
+.OlvidarContr label {
+    display: flex;
+    align-items: center;
+}
+
+.OlvidarContr label input {
+    margin-right: 3px;
+}
+
+.OlvidarContr a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.OlvidarContr a:hover {
+    text-decoration: underline;
+}
+#recordarme {
+    margin-right: 10px;
+}
+#botonEntrar:hover {
+    color: black;
+    background-color: rgb(255, 255, 255, 0.5);
+}
+#botonRegistrar:hover {
+    color: black;
+    background-color: rgb(255, 255, 255, 0.5);
+}
+
+/*--------------------------------------------------------------------*/
+/*DIVS DE MENSAJES PARA: 
+1) TEMAS
+2) MENSAJES DEL FORO
+3) INSERTAR MENSAJES
+4) INSERTAR TEMAS*/
+.div_temas {
+    margin: 30px;
+    width: 80%;
+    height: 180px;
+    border: 1px solid purple;
+    border-radius: 10px;
+    background-color:#7b44e3;
+    transition-duration: 0.5s;
+}
+.div_temas input {
+    width: 100%;
+    height: 60px;
+    background: transparent;
+    border: none;
+    outline: none;
+    padding: 0 35px 0 5px;
+    color: white;
+}
+.div_temas:hover {
+    cursor: pointer;
+    scale: 1.1;
+    transition-duration: 1s;
+}
+.div_temas > div {
+    margin: 10px;
+    cursor: pointer;
+}
+.div_tema_nombre > h1 {
+    color: white;
+    text-decoration: none;
+    text-shadow: 2px 2px purple;
+}
+.div_mostrar_mensajes {
+    color: white;
+    text-align: center;
+}
+.div_mostrar_mensajes:hover {
+    text-decoration: underline;
+    font-weight: bold;
+}
+#nombre_nuevo_tema {
+    width: 100%;
+    height: 30px;
+}
+#descripcion_nuevo_tema {
+    width: 100%;
+    height: 30px;
+}
+#boton_insertar_tema {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: bold;
+    transition-duration: 1s;
+    width: 20%;
+    height: 40px;
+    border-radius: 40px;
+    background-color: rgb(255, 255, 255,1);
+    color: #7b44e3;
+    border: 2px solid purple;
+    outline: none;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.4s ease;
+}
+#boton_insertar_tema:hover {
+    transition-duration: 1s;
+    scale: 1.1;
+    cursor: pointer;
+}
+.foroTotal{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: left;
+    justify-content: center;
+}
+.mensajesForo, #insertar_texto {
+    margin: 50px;
+    border-radius: 10px;
+    background-color: #7b44e3;
+    padding: 30px;
+    height: 250px;
+    width: 80%;
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+}
+#insertar_texto input {
+    width: 100%;
+    height: 60px;
+    background: transparent;
+    border: none;
+    outline: none;
+    padding: 0 35px 0 5px;
+    color: white;
+}
+#insertar_texto {
+    height: 250px;
+    display: flex;
+    padding: 50px;
+}
+#insertar_texto::placeholder {
+    color: white;
+    opacity: 0.5;
+    text-align: center;
+}
+.eliminarMensaje, .eliminarTema {
+    color: red;
+    cursor: pointer;
+    text-align: center;
+}
+.eliminarMensaje:hover, .eliminarTema:hover{
+    text-decoration: underline;
+    font-weight: bold;
+}
+.comentarioUser {
+    display: flex;
+    margin-left: 20px;
+}
+#insertarComentario {
+    height: 200px;
+    width: 90%;
+    background-color: #7b44e3;
+}
+#botonEntrar, #botonRegistrar{
+    color: #7b44e3;
+    width: 100%;
+    height: 40px;
+    border-radius: 40px;
+    background-color: rgb(255, 255, 255, 1);
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.4s ease;
+}
+#aceptarCondiciones {
+    color: #7b44e3;
+}
+#boton_mensaje, #aceptarCondiciones {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: bold;
+    transition-duration: 1s;
+    width: 20%;
+    height: 40px;
+    border-radius: 40px;
+    background-color: rgb(255, 255, 255,1);
+    border: 2px solid purple;
+    outline: none;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.4s ease;
+}
+#boton_mensaje > div {
+    color: #7b44e3 ;
+}
+#boton_mensaje:hover, #aceptarCondiciones:hover {
+    transition-duration: 1s;
+    scale: 1.1;
+    cursor: pointer;
+}
+
+
